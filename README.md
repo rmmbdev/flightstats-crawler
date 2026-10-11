@@ -50,6 +50,8 @@ and 18–24.
 
 ### Examples
 
+With uv:
+
 ```bash
 # All four airports, full available range
 uv run main.py MHD BGW NJF EBL
@@ -65,6 +67,25 @@ uv run main.py EBL --min_delay=3 --max_delay=8
 
 # Show built-in help
 uv run main.py -- --help
+```
+
+With the activated venv:
+
+```bash
+# All four airports, full available range
+python main.py MHD BGW NJF EBL
+
+# Comma-separated, custom output file
+python main.py MHD,BGW --output=iran_iraq.csv
+
+# Only today and the next 2 days
+python main.py NJF --max_past_days=0 --max_future_days=2
+
+# Slower, more polite crawling
+python main.py EBL --min_delay=3 --max_delay=8
+
+# Show built-in help
+python main.py -- --help
 ```
 
 ## Output
