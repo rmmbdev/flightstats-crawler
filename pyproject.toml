@@ -1,0 +1,25 @@
+[project]
+name = "flight-stats-crawler"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Reza Mohammadi", email = "rmm.dev.backend@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "fire>=0.7.1",
+    "httpx>=0.28.1",
+    "rich>=15.0.0",
+]
+
+[project.scripts]
+flight-stats-crawler = "flight_stats_crawler:main"
+
+[build-system]
+requires = ["uv_build>=0.12.10,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv]
+package = false
+constraint-dependencies = ["pygments<2.21"]  # temporary: newest pygments not in offline cache
